@@ -39,7 +39,11 @@ namespace CSHW9
 
         public double Square()
         {
-            return (Point2.Distance(Point3) * (Point1.Y - Point2.Y)) / 2;
+            double p = Perimiter() / 2;
+            double sideA = Point1.Distance(Point2);
+            double sideB = Point2.Distance(Point3);
+            double sideC = Point3.Distance(Point1);
+            return Math.Sqrt(p * (p - sideA) * (p - sideB) * (p - sideC));
         }
 
         public void Print()
